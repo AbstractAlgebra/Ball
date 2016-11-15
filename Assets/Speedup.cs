@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class Speedup : MonoBehaviour {
-
+    public Collider speedupCollider;
 	// Use this for initialization
 	void Start () {
-	
+        Destroy(this.gameObject);
 	}
 	
 	// Update is called once per frame
@@ -13,12 +13,12 @@ public class Speedup : MonoBehaviour {
 	
 	}
 
-    void OnCollisionEnter(Collision col)
+ /*   void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.name == "Ball2")
         {
             print("test");
-            Ball2Movement other = (Ball2Movement)GameObject.Find("Ball2").GetComponent(typeof(Ball2Movement));
+            BallMovement other = (BallMovement)GameObject.Find("Ball2").GetComponent(typeof(BallMovement));
             other.maxSpeed *= 2;
             other.speed *= 2;
         }
@@ -32,5 +32,5 @@ public class Speedup : MonoBehaviour {
 
         Destroy(this.gameObject);
 
-    }
+    }*/
 }

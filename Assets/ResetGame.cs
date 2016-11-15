@@ -11,7 +11,7 @@ public class ResetGame : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         BallMovement ball1 = (BallMovement)GameObject.Find("Ball").GetComponent(typeof(BallMovement));
-        BallMovement ball2 = (BallMovement)GameObject.Find("Ball").GetComponent(typeof(BallMovement));
+        BallMovement ball2 = (BallMovement)GameObject.Find("Ball2").GetComponent(typeof(BallMovement));
         if (ball1.transform.position.y < -5 || ball2.transform.position.y < -5)
         {
             resetGame();
@@ -21,8 +21,9 @@ public class ResetGame : MonoBehaviour {
 
     void resetGame()
     {
-            BallMovement ball1 = (BallMovement)GameObject.Find("Ball").GetComponent(typeof(BallMovement));
-            ball1.transform.position = new Vector3(32.2f, 8f, -2f);
+        BallMovement ball1 = (BallMovement)GameObject.Find("Ball").GetComponent(typeof(BallMovement));
+        BallMovement ball2 = (BallMovement)GameObject.Find("Ball2").GetComponent(typeof(BallMovement));
+        ball1.transform.position = new Vector3(32.2f, 8f, -2f);
             ball2.transform.position = new Vector3(-49.5f, 9.7f, -2f);
         ball1.speed = new Vector3(0,0,0);
         ball2.speed = new Vector3(0,0,0);

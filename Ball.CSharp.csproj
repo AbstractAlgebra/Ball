@@ -69,7 +69,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Ball2Movement.cs" />
     <Compile Include="Assets\BallMovement.cs" />
     <Compile Include="Assets\ResetGame.cs" />
     <Compile Include="Assets\ScreenSettings.cs" />
