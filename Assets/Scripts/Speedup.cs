@@ -5,7 +5,7 @@ public class Speedup : MonoBehaviour {
     public Collider speedupCollider;
 	// Use this for initialization
 	void Start () {
-        Destroy(this.gameObject);
+    //    Destroy(this.gameObject);
 	}
 	
 	// Update is called once per frame
@@ -13,24 +13,24 @@ public class Speedup : MonoBehaviour {
 	
 	}
 
- /*   void OnTriggerEnter(Collider col)
+    void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.name == "Ball2")
+        if (col.gameObject.name == "RedBall")
         {
-            print("test");
-            BallMovement other = (BallMovement)GameObject.Find("Ball2").GetComponent(typeof(BallMovement));
-            other.maxSpeed *= 2;
-            other.speed *= 2;
+            BallMovement other = (BallMovement)GameObject.Find("RedBall").GetComponent(typeof(BallMovement));
+            other.boost= 100;
+            PlayerBoost pb = (PlayerBoost)GameObject.Find("RedBoostBar").GetComponent(typeof(PlayerBoost));
+            pb.fillBar();
         }
-        if (col.gameObject.name == "Ball")
+        if (col.gameObject.name == "BlueBall")
         {
-            print("test");
-            BallMovement other = (BallMovement)GameObject.Find("Ball").GetComponent(typeof(BallMovement));
-            other.maxSpeed *= 2;
-            other.speed *= 2;
+            BallMovement other = (BallMovement)GameObject.Find("BlueBall").GetComponent(typeof(BallMovement));
+            other.boost = 100;
+            PlayerBoost pb = (PlayerBoost)GameObject.Find("BlueBoostBar").GetComponent(typeof(PlayerBoost));
+            pb.fillBar();
         }
 
         Destroy(this.gameObject);
 
-    }*/
+    }
 }

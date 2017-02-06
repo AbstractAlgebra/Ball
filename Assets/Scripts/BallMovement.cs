@@ -12,9 +12,9 @@ public class BallMovement : MonoBehaviour
     private static float MOVEMENTCONSTANT = 7f;
     private static float MOVEMENTSCALAR = 1/10f;
     public static float PUSHBACK = -2f * 1f;
-
+    public float boost = 100;
     public string otherPlayerTag;
-
+    public bool isBoosting = false;
     Rigidbody rb;
     Vector3 push;
     // Use this for initialization
@@ -36,6 +36,7 @@ public class BallMovement : MonoBehaviour
 
         }
 
+
         //player 2
         if ((Input.GetAxis("HorizontalK") != 0 || Input.GetAxis("VerticalK") != 0) && rb.velocity.magnitude <= maxSpeed && this.gameObject.name.Equals("RedBall"))
         {
@@ -54,7 +55,17 @@ public class BallMovement : MonoBehaviour
         transform.Translate(rb.velocity);
         //transform.Rotate(speed * Time.deltaTime * Input.GetAxis("Horizontal"), 0f, speed * Time.deltaTime * Input.GetAxis("Vertical"));
         speed *= friction;
+
+        if (isBoosting)
+        {
+            maxSpeed = 300f;
+        }
+        else
+        {
+            maxSpeed = 200f;
+        }
     }
+
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.CompareTag(otherPlayerTag))
@@ -92,14 +103,14 @@ public class BallMovement : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.name == "Speedup")
+/*        if (col.gameObject.name == "Speedup")
         {
             print("test");
             maxSpeed *= 2;
             rb.velocity *= 2;
             Destroy(col.gameObject);
         }
-
+        */
 
     }
 
