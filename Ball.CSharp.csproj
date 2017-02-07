@@ -77,6 +77,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BallMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerBoost.cs" />
+    <Compile Include="Assets\Scripts\PowerUpManager.cs" />
     <Compile Include="Assets\Scripts\ResetGame.cs" />
     <Compile Include="Assets\Scripts\ScreenSettings.cs" />
     <Compile Include="Assets\Scripts\Speedup.cs" />

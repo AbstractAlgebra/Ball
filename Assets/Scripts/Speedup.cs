@@ -5,12 +5,14 @@ public class Speedup : MonoBehaviour {
     public Collider speedupCollider;
 	// Use this for initialization
 	void Start () {
-    //    Destroy(this.gameObject);
-	}
+        Vector3 pos = new Vector3(Random.Range(-40f, 40f), 58, Random.Range(-30f, 80f));
+        this.transform.position = pos;
+        //    Destroy(this.gameObject);
+    }
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
     void OnTriggerEnter(Collider col)
@@ -21,6 +23,8 @@ public class Speedup : MonoBehaviour {
             other.boost= 100;
             PlayerBoost pb = (PlayerBoost)GameObject.Find("RedBoostBar").GetComponent(typeof(PlayerBoost));
             pb.fillBar();
+            Vector3 pos = new Vector3(Random.Range(-40f, 40f), 58, Random.Range(-30f, 80f));
+
         }
         if (col.gameObject.name == "BlueBall")
         {
@@ -30,7 +34,7 @@ public class Speedup : MonoBehaviour {
             pb.fillBar();
         }
 
-        Destroy(this.gameObject);
-
+        this.gameObject.SetActive(false);
+        GameObject.Find("Canvas").GetComponent<PowerUpManager>().spawned--;
     }
 }
